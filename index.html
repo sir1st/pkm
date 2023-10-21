@@ -28,18 +28,60 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">宝可梦小助手</a>
-                <button id="exportPS" type="button" class="btn btn-default navbar-btn" onclick="exportPS()" data-toggle="popover" data-placement="left" data-content="已复制" 
-                    style="position: absolute; right: 0;margin-right: 8px;">导出</button>
+                <button id="exportPS" type="button" class="btn btn-default navbar-btn" onclick="exportPS()" data-toggle="popover" data-placement="left" data-content="已复制"
+                        style="position: absolute; right: 0;margin-right: 8px;">
+                    导出
+                </button>
             </div>
 
         </div><!-- /.container-fluid -->
     </nav>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <!--<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
+                        <!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <a href="https://www.imdodo.com/channel/188915/1342116" target="_blank">
+                                <img src="pic/1.jpg" alt="conan-1">
+                            </a>
+                            <div class="carousel-caption">
+                                <!--名侦探柯南-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
-                        data-toggle="tab">基础</a></li>
+                <li role="presentation" class="active">
+                    <a href="#home" aria-controls="home" role="tab"
+                       data-toggle="tab">基础</a>
+                </li>
                 <li role="presentation"><a href="#ivev" aria-controls="ivev" role="tab" data-toggle="tab">能力值</a></li>
                 <li role="presentation"><a href="#moves" aria-controls="moves" role="tab" data-toggle="tab">招式</a></li>
             </ul>
@@ -71,7 +113,7 @@
                                 <td>持有物</td>
                                 <td>
                                     <select id="heldItem" class="selectpicker" data-live-search="true"
-                                        data-width="auto">
+                                            data-width="auto">
                                         <option value='None'>无</option>
                                         <option value='Master Ball'>大师球</option>
                                         <option value='Ultra Ball'>高级球</option>
@@ -609,7 +651,7 @@
                                 <td>
                                     <div class="form-group">
                                         <input type="number" class="form-control" id="level" placeholder="1-100"
-                                            onchange="checkNum(this, 1, 100, 100)" style="width: 6em;">
+                                               onchange="checkNum(this, 1, 100, 100)" style="width: 6em;">
                                     </div>
                                 </td>
                             </tr>
@@ -746,8 +788,8 @@
                                 <td>
                                     <div class="form-group">
                                         <input id="scale" type="number" class="form-control" id="level"
-                                            placeholder="0-255" onchange="checkNum(this, 0, 255, 128)"
-                                            style="width: 6em;">
+                                               placeholder="0-255" onchange="checkNum(this, 0, 255, 128)"
+                                               style="width: 6em;">
                                     </div>
                                 </td>
                             </tr>
@@ -767,16 +809,16 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
                                 </td>
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -785,7 +827,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -793,9 +835,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -804,7 +846,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -812,9 +854,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -823,7 +865,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -831,9 +873,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -842,7 +884,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -850,9 +892,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -861,7 +903,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -869,9 +911,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -930,12 +972,12 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-        crossorigin="anonymous"></script>
+            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+            crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-        crossorigin="anonymous"></script>
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/js/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
     <script src="dic.js"></script>
@@ -943,7 +985,7 @@
         $(document).ready(function () {
             let $species = $("#species");
             $species.empty();
-            for(let s in dic_dict) {
+            for (let s in dic_dict) {
                 $("#species").append('<option value="' + s + '">' + dic_dict[s][0] + '</option>');
             }
             $species.selectpicker('refresh');
@@ -1111,7 +1153,7 @@
             new ClipboardJS("#exportPS");
             $("#exportPS").attr("data-clipboard-text", text);
             $("#exportPS").popover("show");
-            setTimeout(function(){$("#exportPS").popover("hide");}, 2000);
+            setTimeout(function () { $("#exportPS").popover("hide"); }, 2000);
             console.log(text);
         }
         function showPopover(target, msg) {
