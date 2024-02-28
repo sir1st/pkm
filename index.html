@@ -29,8 +29,14 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">宝可梦定制台-Mr.King</a>
-                <button id="exportPS" type="button" class="btn btn-default navbar-btn" onclick="exportPS()" data-toggle="popover" data-placement="left" data-content="已复制" 
-                    style="position: absolute; right: 0;margin-right: 8px;">导出</button>
+                <button id="exportPS" type="button" class="btn btn-default navbar-btn" onclick="exportPS()" data-toggle="popover" data-placement="left" data-content="已复制"
+                        style="position: absolute; right: 0;margin-right: 8px;">
+                    导出
+                </button>
+                <button id="batchPS" type="button" class="btn btn-default navbar-btn" onclick="batchPS()" data-toggle="popover" data-placement="left" data-content="已添加"
+                        style="position: absolute; right: 75px; margin-right: 8px;">
+                    添加到批量
+                </button>
             </div>
 
         </div><!-- /.container-fluid -->
@@ -77,10 +83,13 @@
         <div>
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
-                        data-toggle="tab">基础</a></li>
+                <li role="presentation" class="active">
+                    <a href="#home" aria-controls="home" role="tab"
+                       data-toggle="tab">基础</a>
+                </li>
                 <li role="presentation"><a href="#ivev" aria-controls="ivev" role="tab" data-toggle="tab">能力值</a></li>
                 <li role="presentation"><a href="#moves" aria-controls="moves" role="tab" data-toggle="tab">招式</a></li>
+                <li role="presentation"><a href="#batch" aria-controls="batch" role="tab" data-toggle="tab">批量</a></li>
             </ul>
 
             <!-- Tab panes -->
@@ -110,7 +119,7 @@
                                 <td>持有物</td>
                                 <td>
                                     <select id="heldItem" class="selectpicker" data-live-search="true"
-                                        data-width="auto">
+                                            data-width="auto">
                                         <option value='None'>无</option>
                                     </select>
                                 </td>
@@ -120,7 +129,7 @@
                                 <td>
                                     <div class="form-group">
                                         <input type="number" class="form-control" id="level" placeholder="1-100"
-                                            onchange="checkNum(this, 1, 100, 100)" style="width: 6em;">
+                                               onchange="checkNum(this, 1, 100, 100)" style="width: 6em;">
                                     </div>
                                 </td>
                             </tr>
@@ -258,8 +267,8 @@
                                 <td>
                                     <div class="form-group">
                                         <input id="scale" type="number" class="form-control" id="level"
-                                            placeholder="0-255" onchange="checkNum(this, 0, 255, 128)"
-                                            style="width: 6em;">
+                                               placeholder="0-255" onchange="checkNum(this, 0, 255, 128)"
+                                               style="width: 6em;">
                                     </div>
                                 </td>
                             </tr>
@@ -279,16 +288,16 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
                                 </td>
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -297,7 +306,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -305,9 +314,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -316,7 +325,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -324,9 +333,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -335,7 +344,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -343,9 +352,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -354,7 +363,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -362,9 +371,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -373,7 +382,7 @@
                                 <td class="iv">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
+                                               style="width: 4em; display: inline;" value="31" onchange="checkNum(this, 0, 31, 31)">
                                         <input class="btn btn-info" type="button" value="Min" onclick="toNumberIV(this)">
                                     </div>
 
@@ -381,9 +390,9 @@
                                 <td class="ev">
                                     <div class="form-group form-inline">
                                         <input type="number" class="form-control" placeholder=""
-                                            style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
+                                               style="width: 5em; display: inline;" onchange="checkNum(this, 0, 252, 252)">
                                         <input class="btn btn-info" type="button" value="Max"
-                                            onclick="toNumberEV(this)">
+                                               onclick="toNumberEV(this)">
                                     </div>
                                 </td>
                             </tr>
@@ -436,6 +445,19 @@
                         </tbody>
                     </table>
                 </div>
+                <div role="tabpanel" class="tab-pane" id="batch">
+                    <div class="table">
+                        <h4 style="color: #66be8c; margin-bottom:20px;">
+                            <input class="btn btn-infos" type="button" value="批量宝可梦PS代码导出"
+                                   onclick="exportbatchPS()">
+                            <input class="btn btn-infos2" type="button" value="清除PS代码"
+                                   onclick="clearbatchPS()">
+                        </h4>
+                        <h5>
+                            当前没有宝可梦，请点击右上角添加！！
+                        </h5>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -469,7 +491,6 @@
                 refresh();
             });
         });
-
         function refresh() {
             var species = $("#species").val();
             var gender = dic_dict[species][1];
@@ -630,6 +651,126 @@
             $("#exportPS").popover("show");
             setTimeout(function(){$("#exportPS").popover("hide");}, 2000);
             console.log(text);
+        }
+        var ss = true;
+        //批量添加宝可梦
+        function batchPS() {
+            if (ss) {
+                $(".table h5").empty();
+                ss = false;
+            }
+            var text = "";
+            var species = $("#species").val();
+            text += species;
+            var gender = $("#gender").val();
+            if (gender == "female" && (species == "Meowstic" || species == "Indeedee" || species == "Basculegion " || species == "Oinkologne")) {
+                species += "-F";
+            }
+            if (gender == "male") text += " (M)";
+            else if (gender == "female") text += " (F)";
+            var heldItem = $("#heldItem").val();
+            if (heldItem != "None") {
+                text += " @ " + heldItem + "\n<br>";
+            } else {
+                text += "\n<br>";
+            }
+
+            var level = $("#level").val();
+            if (level != null && level > 0 && level <= 100) {
+                text += "Level: " + level + "\n<br>";
+            }
+            if ($("#isShiny").prop('checked')) {
+                text += "Shiny: Yes\n<br>";
+            }
+            var ball = $("#ball").val();
+            if (ball != "None") {
+                text += "Ball: " + ball + "\n<br>";
+            }
+            var ability = $("#ability").val();
+            text += "Ability: " + ability + "\n<br>";
+            var nature = $("#nature").val();
+            text += nature + " Nature\n<br>";
+
+            var evs = $(".ev input[type='number']");
+            text += "EVs: " + (evs[0].value == "" ? 0 : evs[0].value) + " HP / "
+                + (evs[1].value == "" ? 0 : evs[1].value) + " Atk / "
+                + (evs[2].value == "" ? 0 : evs[2].value) + " Def / "
+                + (evs[3].value == "" ? 0 : evs[3].value) + " SpA / "
+                + (evs[4].value == "" ? 0 : evs[4].value) + " SpD / "
+                + (evs[5].value == "" ? 0 : evs[5].value) + " Spe \n<br>";
+
+            var ivs = $(".iv input[type='number']");
+            text += "IVs: " + (ivs[0].value == "" ? 0 : ivs[0].value) + " HP / "
+                + (ivs[1].value == "" ? 0 : ivs[1].value) + " Atk / "
+                + (ivs[2].value == "" ? 0 : ivs[2].value) + " Def / "
+                + (ivs[3].value == "" ? 0 : ivs[3].value) + " SpA / "
+                + (ivs[4].value == "" ? 0 : ivs[4].value) + " SpD / "
+                + (ivs[5].value == "" ? 0 : ivs[5].value) + " Spe \n<br>";
+
+            var teraType = $("#teraType").val();
+            if (teraType != "None")
+                text += "Tera Type: " + teraType + "\n<br>";
+            var language = $("#language").val();
+            text += "Language: " + language + "\n<br>";
+            var scale = $("#scale").val();
+            if (scale != "" && scale >= 0 && scale <= 255) {
+                text += ".Scale=" + scale + "\n<br>";
+            }
+
+            var move1 = $("#move1").val();
+            var move2 = $("#move2").val();
+            var move3 = $("#move3").val();
+            var move4 = $("#move4").val();
+            if (move1 != "None") {
+                text += "-" + move1 + "\n<br>";
+            }
+            if (move2 != "None") {
+                text += "-" + move2 + "\n<br>";
+            }
+            if (move3 != "None") {
+                text += "-" + move3 + "\n<br>";
+            }
+            if (move4 != "None") {
+                text += "-" + move4 + "\n<br>";
+            }
+            text += "\n<br>";
+            text += "\n<br>";
+            $("#batch .table").append('<h5>' + text + '</h5>');
+            $("#batchPS").popover("show");
+            setTimeout(function () { $("#batchPS").popover("hide"); }, 2000);
+            console.log(text);
+        }
+        function exportbatchPS() {
+            var ps = "";
+            $(".table h5").each(function () {
+                ps += $(this).text().trim() + " " + "\n\n"; // 获取每个<h5>元素的文本内容并添加到ps变量中
+            });
+            
+            if (ps.includes("当前没有宝可梦")) {
+                showPopover($(".btn.btn-infos"), "尚未添加宝可梦进入批量列表");
+            }
+            else {
+                ps = ps.substring(3, ps.length-3);
+                new ClipboardJS(".btn.btn-infos");
+                $(".btn.btn-infos").attr("data-clipboard-text", ps);
+                showPopover($(".btn.btn-infos"), "批量宝可梦已复制到剪贴板");
+                console.log(ps);
+            }
+        }
+        function clearbatchPS() {
+            var ps = "";
+            $(".table h5").each(function () {
+                ps += $(this).text() + " ";
+            });
+            if (ps.includes("当前没有宝可梦")) {
+                showPopover($(".btn.btn-infos2"), "尚未添加宝可梦进入批量列表");
+            }
+            else {
+                showPopover($(".btn.btn-infos2"), "已全部清除");
+                $(".table h5").empty();
+                $("#batch .table").append('<h5>' + "当前没有宝可梦，请点击右上角添加！！" + '</h5>');
+                ss = true;
+            }
         }
         function showPopover(target, msg) {
             target.attr("data-original-title", msg);
