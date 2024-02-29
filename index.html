@@ -448,14 +448,16 @@
                 <div role="tabpanel" class="tab-pane" id="batch">
                     <div class="table">
                         <h4 style="color: #66be8c; margin-bottom:20px;">
-                            <input class="btn btn-infos" type="button" value="批量宝可梦PS代码导出"
+                            <input class="btn btn-infos" type="button" value="批量PS代码导出"
                                    onclick="exportbatchPS()">
-                            <input class="btn btn-infos2" type="button" value="清除PS代码"
+                            <input class="btn btn-infos2" type="button" value="清除全部PS代码"
                                    onclick="clearbatchPS()">
+                            <input class="btn btn-infos3" type="button" value="清除新增PS代码"
+                                   onclick="clearfinalPS()">
                         </h4>
-                        <h5>
-                            当前没有宝可梦，请点击右上角添加！！
-                        </h5>
+                        <h4>
+                            已添加宝可梦数量：<span id="psVariable">0</span>
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -652,13 +654,10 @@
             setTimeout(function(){$("#exportPS").popover("hide");}, 2000);
             console.log(text);
         }
-        var ss = true;
+        var psnum = 0;
         //批量添加宝可梦
         function batchPS() {
-            if (ss) {
-                $(".table h5").empty();
-                ss = false;
-            }
+            psnum++;
             var text = "";
             var species = $("#species").val();
             text += species;
@@ -738,6 +737,7 @@
             $("#batch .table").append('<h5>' + text + '</h5>');
             $("#batchPS").popover("show");
             setTimeout(function () { $("#batchPS").popover("hide"); }, 2000);
+            document.getElementById("psVariable").textContent = psnum;
             console.log(text);
         }
         function exportbatchPS() {
@@ -746,11 +746,11 @@
                 ps += $(this).text().trim() + " " + "\n\n"; // 获取每个<h5>元素的文本内容并添加到ps变量中
             });
             
-            if (ps.includes("当前没有宝可梦")) {
+            if (psnum == 0) {
                 showPopover($(".btn.btn-infos"), "尚未添加宝可梦进入批量列表");
             }
             else {
-                ps = ps.substring(3, ps.length-3);
+                ps = ps.substring(0, ps.length-3);
                 new ClipboardJS(".btn.btn-infos");
                 $(".btn.btn-infos").attr("data-clipboard-text", ps);
                 showPopover($(".btn.btn-infos"), "批量宝可梦已复制到剪贴板");
@@ -758,18 +758,31 @@
             }
         }
         function clearbatchPS() {
-            var ps = "";
-            $(".table h5").each(function () {
-                ps += $(this).text() + " ";
-            });
-            if (ps.includes("当前没有宝可梦")) {
+            if (psnum == 0) {
                 showPopover($(".btn.btn-infos2"), "尚未添加宝可梦进入批量列表");
             }
             else {
+                psnum = 0;
+                document.getElementById("psVariable").textContent = psnum;
                 showPopover($(".btn.btn-infos2"), "已全部清除");
                 $(".table h5").empty();
-                $("#batch .table").append('<h5>' + "当前没有宝可梦，请点击右上角添加！！" + '</h5>');
-                ss = true;
+            }
+        }
+        function clearfinalPS() {
+            if (psnum == 0) {
+                showPopover($(".btn.btn-infos3"), "尚未添加宝可梦进入批量列表");
+            }
+            else {
+                // 找到所有的 <h5> 元素
+                var h5Elements = document.querySelectorAll('#batch .table h5');
+
+                // 如果存在要清除的元素，则移除最后一个 <h5> 元素
+                if (h5Elements.length > 0) {
+                    h5Elements[h5Elements.length - 1].remove();
+                    psnum--;
+                    document.getElementById("psVariable").textContent = psnum;
+                    showPopover($(".btn.btn-infos3"), "已清除新增宝可梦");
+                }
             }
         }
         function showPopover(target, msg) {
